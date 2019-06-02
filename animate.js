@@ -35,7 +35,7 @@ function animateNode(node) {
 
     const loopsPerFrame = Math.max(1, Math.round(content.length * lettersPerFrame));
 
-    node.textContent = node.textContent.replace(/[^ ]/gm, '\u2002').replace(/ /gm, '\u00A0');
+    node.textContent = node.textContent.replace(/[^ ]/gm, '\u2002');
 
     let loop = () => {
         for (let i = 0; i < loopsPerFrame; i++) {
