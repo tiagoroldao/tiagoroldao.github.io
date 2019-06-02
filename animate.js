@@ -1,17 +1,17 @@
-const lettersPerFrame = 0.4;
+const lettersPerFrame = 0.6;
 const frameDuration = 1000/30;
 const letterIter = 20;
 const letterShow = 10;
 
 
 function animate() {
-    if (window.localStorage && !window.localStorage.getItem('animated')){
+    // if (window.localStorage && !window.localStorage.getItem('animated')){
         document.body.style.opacity = 1;
         window.localStorage.setItem('animated', '1');
         animateElement(document.body);
-    } else {
-        document.body.style.opacity = 1;
-    }
+    // } else {
+    //     document.body.style.opacity = 1;
+    // }
 }
 
 
@@ -34,7 +34,6 @@ function animateNode(node) {
     })).filter(el => el.char !== ' ');
 
     const loopsPerFrame = Math.max(1, Math.round(content.length * lettersPerFrame));
-    console.log(loopsPerFrame);
 
     node.textContent = node.textContent.replace(/[^ ]/gm, '\u2002').replace(/ /gm, '\u00A0');
 
